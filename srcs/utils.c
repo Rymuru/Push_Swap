@@ -6,30 +6,30 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 17:04:07 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/01/31 16:08:29 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/01/31 17:39:09 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	error_manager(t_stack st)
+int	error_manager(t_stack *st)
 {
-	st.len = 0;
-	free(st.address);
+	st->len = 0;
+	free(st->address);
 	write(1, "Error", 6);
-	return (st);
+	return (1);
 }
 
-t_stack	stack_init(t_stack st, int nb, char n)
+int	stack_init(t_stack *st, int nb, char n)
 {
-	st.name = n;
-	st.len = nb - 1;
-	st.address = malloc(st.len * sizeof(int));
-	if (!st.address)
+	st->name = n;
+	st->len = nb - 1;
+	st->address = malloc(st->len * sizeof(int));
+	if (!st->address)
 	{
-		st.len = 0;
+		return (1);
 	}
-	return (st);
+	return (0);
 }
 
 size_t	ft_strlen(const char *s)

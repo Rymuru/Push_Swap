@@ -6,31 +6,32 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:02:30 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/01/31 16:21:22 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/01/31 17:41:07 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	solver(t_stack a)
+int	solver(t_stack *a)
 {
-	t_stack	b;
+	t_stack	*b;
 
+	b = malloc(sizeof(t_stack));
 	if (is_solved(a) == 0)
-		return (a);
-	b = stack_init(b, a.len, 'b');
-	if (b.len == 0)
+		return (0);
+	stack_init(b, a->len, 'b');
+	if (b->len == 0)
 		error_manager(a);
-	return (a);
+	return (0);
 }
 
-int	is_solved(t_stack st)
+int	is_solved(t_stack *st)
 {
-	while (st.len > 0)
+	while (st->len > 0)
 	{
-		if (st.address[st.len] < st.address[st.len - 1])
+		if (st->address[st->len] < st->address[st->len - 1])
 			return (1);
-		st.len--;
+		st->len--;
 	}
 	return (0);
 }

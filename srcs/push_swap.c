@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:25:12 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/01/31 16:00:42 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/01/31 17:42:46 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	dejavu(int *tab, int size, long int n)
 	return (0);
 }
 
-t_stack	fill_tab(int ac, char **av, t_stack a)
+int	fill_tab(int ac, char **av, t_stack *a)
 {
 	int			i;
 	long int	temp;
@@ -77,27 +77,27 @@ t_stack	fill_tab(int ac, char **av, t_stack a)
 		temp = ft_atoi(av[i]);
 		if (temp > 2147483647 || temp < -2147483648)
 			return (error_manager(a));
-		twin = dejavu(a.address, i - 1, temp);
-		a.address[i - 1] = temp;
+		twin = dejavu(a->address, i - 1, temp);
+		a->address[i - 1] = temp;
 		i++;
 	}
 	if (twin == 1)
 		return (error_manager(a));
-	return (a);
+	return (0);
 }
 
 int	main(int ac, char **av)
 {
-	t_stack	a;
+	t_stack	*a;
 
+	a = malloc(sizeof(t_stack));
 	if (safe(ac, av) == 1)
 	{
 		write(1, "Error\n", 6);
 		return (1);
 	}
-	a = stack_init(a, ac, 'a');
-	a = fill_tab(ac, av, a);
-	if (a.len == 0)
+	stack_init(a, ac, 'a');
+	if (fill_tab(ac, av, a) == 1)
 		return (1);
 	solver(a);
 	write(1, "all good\n", 8);
