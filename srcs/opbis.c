@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:39:19 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/04/06 14:21:03 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/13 16:55:43 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 void	pa_pb(t_stack *st, t_stack *st2)
 {
 	ft_plusun(st2);
-	st->address[0] = st2->address[0];
+	st2->address[0] = st->address[0];
 	ft_moinsun(st);
-	write(1, 'p', 1);
-	write(1, st->name, 1);
+	write(1, "p", 1);
+	write(1, &st2->name, 1);
+	write(1, "\n", 1);
 }
 
 void	rra_rrb(t_stack *st)

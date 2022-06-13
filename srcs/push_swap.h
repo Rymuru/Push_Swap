@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 12:22:31 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/01/31 17:38:10 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/13 16:15:15 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,17 @@ int			solver(t_stack *a);
 long int	ft_atoi(char *str);
 
 size_t		ft_strlen(const char *s);
+
+void		bitconvert(t_stack *st);
+void		radix(t_stack *a, t_stack *b);
+void		ft_plusun(t_stack *st);
+void		ft_moinsun(t_stack *st);
+void		sa_sb(t_stack *st);
+void		ss(t_stack *st, t_stack *st2);
+void		ra_rb(t_stack *st);
+void		rr(t_stack *st, t_stack *st2);
+void		pa_pb(t_stack *st, t_stack *st2);
+void		rra_rrb(t_stack *st);
+void		rrr(t_stack *st, t_stack *st2);
 
 #endif

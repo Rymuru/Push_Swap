@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:25:12 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/01/31 17:42:46 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/13 16:31:05 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,5 @@ int	main(int ac, char **av)
 	if (fill_tab(ac, av, a) == 1)
 		return (1);
 	solver(a);
-	write(1, "all good\n", 8);
 	return (0);
 }

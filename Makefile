@@ -1,6 +1,11 @@
 
 SRCS	=	\
+			algorithm.c			\
+			operations.c		\
+			opbis.c				\
 			push_swap.c			\
+			resize.c			\
+			to_radix.c			\
 			utils.c
 
 
