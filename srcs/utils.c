@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 17:04:07 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/01/31 17:39:09 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/14 17:57:12 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	stack_init(t_stack *st, int nb, char n)
 {
 	st->name = n;
 	st->len = nb - 1;
-	st->address = malloc(st->len * sizeof(int));
+	st->address = malloc(st->len * sizeof(long int));
 	if (!st->address)
 	{
 		return (1);

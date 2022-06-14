@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:25:12 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/13 16:31:05 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/14 17:53:25 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	safe(int ac, char **av)
 	return (0);
 }
 
-int	dejavu(int *tab, int size, long int n)
+int	dejavu(long int *tab, int size, long int n)
 {
 	int	i;
 

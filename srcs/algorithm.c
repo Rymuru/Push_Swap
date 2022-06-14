@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:02:30 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/14 16:31:25 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/14 19:22:43 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 int	solver(t_stack *a)
 {
 	t_stack	*b;
+	t_stack	*easy;
 
 	b = malloc(sizeof(t_stack));
-	/*if (is_solved(a) == 0)
-		return (0);*/
+	easy = malloc(sizeof(t_stack));
 	stack_init(b, a->len, 'b');
-	if (b->len == 0)
+	stack_init(easy, a->len, 'a');
+	if (b->len == 0 || easy->len == 0)
 		error_manager(a);
+	simplifier(a, easy);
 	b->len = 0;
-	radix(a, b);
+	radix(easy, b);
 	return (0);
 }
 
@@ -39,4 +41,31 @@ int	is_solved(t_stack *st)
 		++i;
 	}
 	return (0);
+}
+
+void	simplifier(t_stack *a, t_stack *easy)
+{
+	size_t		c;
+	size_t		i;
+	long int	x;
+	long int	ret;
+
+	c = 0;
+	i = 1;
+	x = a->address[0];
+	ret = -2147483648;
+
+	while (c < a->len)
+	{
+		while (i < a->len)
+		{
+			if (a->address[i] < x && a->address[i] > ret)
+				x = a->address[i];
+			easy->address[i] = c;
+			++i;
+		}
+		ret = x;
+		i = 0;
+		++c;
+	}
 }

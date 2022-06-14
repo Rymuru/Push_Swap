@@ -19,7 +19,7 @@ CC		= gcc -c -o
 LINKER	= gcc -o
 RM		= rm -rf
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g
 
 ${NAME}:	${OBJS}
 			${LINKER} ${NAME} ${OBJS}

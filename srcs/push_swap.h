@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 12:22:31 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/14 16:18:13 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/14 19:22:44 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
 
 typedef struct s_stack
 {
-	char	name;
-	size_t	len;
-	int		*address;
+	char		name;
+	size_t		len;
+	long int	*address;
 }	t_stack;
 
 int			main(int ac, char **av);
 int			safe(int ac, char **av);
-int			dejavu(int *tab, int size, long int n);
+int			dejavu(int long *tab, int size, long int n);
 int			fill_tab(int ac, char **av, t_stack *a);
 int			stack_init(t_stack *st, int nb, char n);
 int			error_manager(t_stack *st);
@@ -37,6 +37,7 @@ long int	ft_atoi(char *str);
 
 size_t		ft_strlen(const char *s);
 
+void		simplifier(t_stack *a, t_stack *easy);
 void		bitconvert(t_stack *st);
 void		radix(t_stack *a, t_stack *b);
 void		railway(t_stack *a, t_stack *b);
