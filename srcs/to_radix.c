@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:42:45 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/13 17:20:13 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/14 16:39:37 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,53 @@ void	bitconvert(t_stack *st)
 void	radix(t_stack *a, t_stack *b)
 {
 	size_t	i;
-	size_t	x;
 	size_t	tmp_len;
 
 	i = 0;
 	tmp_len = a->len;
 	while (a->address[i])
 	{
-		/*if (is_solved(a) == 0 && b->len == 0)
-			break ;*/
 		while (i < tmp_len)
 		{
-			x = a->address[0] % 2;
-			a->address[0] = a->address[0] / 2;
-			if (x == 0)
-				pa_pb(a, b);
+			if (a->address[0] >= 0)
+				railway(a, b);
 			else
-				ra_rb(a);
+				invert(a, b);
+			if (is_solved(a) == 0 && b->len == 0)
+			{
+				break ;
+			}
 			++i;
 		}
 		while (b->len)
 			pa_pb(b, a);
+		if (is_solved(a) == 0 && b->len == 0)
+			break ;
 		i = 0;
 	}
+}
+
+void	railway(t_stack *a, t_stack *b)
+{
+	long int	x;
+
+	x = a->address[0] % 2;
+	a->address[0] = a->address[0] / 2;
+	if (x == 0)
+		pa_pb(a, b);
+	else
+		ra_rb(a);
+}
+
+
+void	invert(t_stack *a, t_stack *b)
+{
+	long int	x;
+
+	x = a->address[0] % 2;
+	a->address[0] = a->address[0] / 2;
+	if (x == 1)
+		pa_pb(a, b);
+	else
+		ra_rb(a);
 }

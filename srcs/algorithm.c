@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:02:30 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/13 17:19:08 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/14 16:31:25 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	solver(t_stack *a)
 {
-	printf("%s\n", "reach solver");
 	t_stack	*b;
 
 	b = malloc(sizeof(t_stack));
@@ -30,14 +29,14 @@ int	solver(t_stack *a)
 
 int	is_solved(t_stack *st)
 {
-	int	i;
+	size_t	i;
 
-	i = st->len - 1;
-	while (i - 1 > 0)
+	i = 0;
+	while (i < st->len)
 	{
-		if (st->address[i] < st->address[i - 1])
+		if (st->address[i] > st->address[i + 1])
 			return (1);
-		i--;
+		++i;
 	}
 	return (0);
 }

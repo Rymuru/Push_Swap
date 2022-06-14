@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 12:22:31 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/13 16:15:15 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/14 16:18:13 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ size_t		ft_strlen(const char *s);
 
 void		bitconvert(t_stack *st);
 void		radix(t_stack *a, t_stack *b);
+void		railway(t_stack *a, t_stack *b);
+void		invert(t_stack *a, t_stack *b);
 void		ft_plusun(t_stack *st);
 void		ft_moinsun(t_stack *st);
 void		sa_sb(t_stack *st);
