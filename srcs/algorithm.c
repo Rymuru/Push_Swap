@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:02:30 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/15 21:48:18 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/15 22:02:08 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	solver(t_stack *a)
 	simplifier(a, easy);
 	b->len = 0;
 	radix(easy, b);
+	free_stack(b);
+	free_stack(easy);
 	return (0);
 }
 
@@ -77,6 +79,7 @@ void	simplifier(t_stack *a, t_stack *easy)
 		i = 0;
 		++c[2];
 	}
+	put_tab(a);
 	put_tab(easy);
 }
 
@@ -85,9 +88,10 @@ void put_tab(t_stack *st)
 	long int i;
 
 	i = 0;
-	while (i <= st->len)
+	while (i < st->len)
 	{
 		ft_putnbr(st->address[i]);
+		ft_putchar(' ');
 		i++;
 	}
 	ft_putchar('\n');

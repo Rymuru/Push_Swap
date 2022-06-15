@@ -6,11 +6,17 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 17:04:07 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/14 17:57:12 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/15 22:04:03 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	free_stack(t_stack *st)
+{
+	free(st->address);
+	free(st);
+}
 
 int	error_manager(t_stack *st)
 {

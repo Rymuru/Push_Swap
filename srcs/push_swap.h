@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 12:22:31 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/15 21:08:14 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/15 22:02:50 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ long int	ft_atoi(char *str);
 
 size_t		ft_strlen(const char *s);
 
+void		free_stack(t_stack *st);
 void		simplifier(t_stack *a, t_stack *easy);
 void		bitconvert(t_stack *st);
 void		radix(t_stack *a, t_stack *b);
