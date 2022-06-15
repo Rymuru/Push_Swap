@@ -6,35 +6,16 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 14:42:45 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/14 18:36:02 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/15 21:48:22 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	bitconvert(t_stack *st)
-{
-	size_t	i;
-	size_t	z;
-
-	i = 0;
-	z = 0;
-	while (z < st->len)
-	{
-		while (i < sizeof(int) * 8)
-		{
-			st->address[z] = (st->address[z] >> i) & 1;
-			++i;
-		}
-		i = 0;
-	++z;
-	}
-}
-
 void	radix(t_stack *a, t_stack *b)
 {
-	size_t	i;
-	size_t	tmp_len;
+	long int	i;
+	long int	tmp_len;
 
 	i = 0;
 	tmp_len = a->len;

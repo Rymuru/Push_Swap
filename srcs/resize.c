@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 18:11:13 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/14 17:27:56 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/15 21:31:22 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_plusun(t_stack *st)
 {
-	int	i;
+	long int	i;
 
 	i = st->len;
 	while (i > 0)
@@ -27,7 +27,7 @@ void	ft_plusun(t_stack *st)
 
 void	ft_moinsun(t_stack *st)
 {
-	size_t	i;
+	long int	i;
 
 	i = 0;
 	while (i < st->len - 1 && st->len > 1)

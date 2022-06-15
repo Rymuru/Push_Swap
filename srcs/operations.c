@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:29:52 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/13 17:01:52 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/15 21:30:34 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void	ss(t_stack *st, t_stack *st2)
 
 void	ra_rb(t_stack *st)
 {
-	size_t	i;
-	int		temp;
+	long int	i;
+	int			temp;
 
 	i = 0;
 	temp = st->address[0];
@@ -59,8 +59,8 @@ void	ra_rb(t_stack *st)
 
 void	rr(t_stack *st, t_stack *st2)
 {
-	size_t	i;
-	int		temp;
+	long int	i;
+	int			temp;
 
 	i = 0;
 	temp = st->address[i];

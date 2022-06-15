@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 12:22:31 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/14 19:22:44 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/15 21:08:14 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 typedef struct s_stack
 {
 	char		name;
-	size_t		len;
+	long int	len;
 	long int	*address;
 }	t_stack;
 
@@ -51,5 +51,9 @@ void		rr(t_stack *st, t_stack *st2);
 void		pa_pb(t_stack *st, t_stack *st2);
 void		rra_rrb(t_stack *st);
 void		rrr(t_stack *st, t_stack *st2);
+
+void put_tab(t_stack *st);
+void	ft_putnbr(int n);
+void	ft_putchar(char c);
 
 #endif
