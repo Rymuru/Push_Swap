@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:02:30 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/15 22:02:08 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/15 22:28:15 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	is_solved(t_stack *st)
 c[0] = lowest value
 c[1] = location of this value
 c[2] = value to write in new stack
-c[3] = precedent minimum value
+c[3] = precedent lowest value
 */
 
 void	simplifier(t_stack *a, t_stack *easy)
@@ -67,7 +67,7 @@ void	simplifier(t_stack *a, t_stack *easy)
 	{
 		while (i < a->len)
 		{
-			if (a->address[i] < c[0] && a->address[i] >= c[3])
+			if (a->address[i] < c[0] && a->address[i] > c[3])
 			{
 				c[0] = a->address[i];
 				c[1] = i;
