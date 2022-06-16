@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 23:41:57 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/17 01:09:40 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/17 01:16:50 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	sort_three(t_stack *a, int min, int max)
 {
 	min = find_min(min, a);
 	max = find_max(max, a);
-
 	if (max == 0)
 	{
 		if (min == 2)

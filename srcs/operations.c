@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:29:52 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/17 00:28:05 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/17 01:20:56 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sa_sb(t_stack *st)
 {
-	int	temp;
+	long long int	temp;
 
 	temp = st->address[0];
 	st->address[0] = st->address[1];
