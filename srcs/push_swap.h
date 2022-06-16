@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 12:22:31 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/16 17:57:15 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/16 22:52:16 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ long int	ft_atoi(char *str);
 
 size_t		ft_strlen(const char *s);
 
+void		stack_maker(t_stack *a, t_stack *b, t_stack *easy, t_stack *bis);
 void		free_stack(t_stack *st);
 void		simplifier(t_stack *a, t_stack *easy);
 int			edge_case(t_stack *a, t_stack *easy);
