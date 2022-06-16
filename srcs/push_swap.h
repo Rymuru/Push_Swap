@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 12:22:31 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/16 22:52:16 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/17 00:57:45 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ int			is_solved(t_stack *st);
 int			check_arg(char *o);
 int			solver(t_stack *a);
 int			look_for_min(int at_least, t_stack *a);
+int			edge_case(t_stack *a, t_stack *easy);
+int			quick_init(t_stack *a);
+int			find_min(int min, t_stack *a);
+int			find_max(int max, t_stack *a);
 long int	ft_atoi(char *str);
 
 size_t		ft_strlen(const char *s);
@@ -42,10 +46,10 @@ size_t		ft_strlen(const char *s);
 void		stack_maker(t_stack *a, t_stack *b, t_stack *easy, t_stack *bis);
 void		free_stack(t_stack *st);
 void		simplifier(t_stack *a, t_stack *easy);
-int			edge_case(t_stack *a, t_stack *easy);
 void		radix(t_stack *easy, t_stack *bis, t_stack *a, t_stack *b);
 void		railway(t_stack *easy, t_stack *bis, t_stack *a, t_stack *b);
 void		invert(t_stack *a, t_stack *b);
+void		sort_three(t_stack *a, int min, int max);
 void		ft_plusun(t_stack *st);
 void		ft_moinsun(t_stack *st);
 void		sa_sb(t_stack *st);
