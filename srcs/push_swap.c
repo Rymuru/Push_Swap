@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:25:12 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/16 14:19:02 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/16 17:34:50 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ int	main(int ac, char **av)
 	t_stack	*a;
 
 	a = malloc(sizeof(t_stack));
+	if (!a)
+		error_manager(a);
 	if (safe(ac, av) == 1)
 	{
 		write(1, "Error\n", 6);
@@ -98,7 +100,10 @@ int	main(int ac, char **av)
 	}
 	stack_init(a, ac - 1, 'a');
 	if (fill_tab(ac, av, a) == 1)
+	{
+		free(a);
 		return (1);
+	}
 	solver(a);
 	free_stack(a);
 	return (0);

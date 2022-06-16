@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 12:22:31 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/16 16:46:03 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/16 17:57:15 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ size_t		ft_strlen(const char *s);
 
 void		free_stack(t_stack *st);
 void		simplifier(t_stack *a, t_stack *easy);
-void		edge_case(t_stack *a, t_stack *easy);
+int			edge_case(t_stack *a, t_stack *easy);
 void		radix(t_stack *easy, t_stack *bis, t_stack *a, t_stack *b);
 void		railway(t_stack *easy, t_stack *bis, t_stack *a, t_stack *b);
 void		invert(t_stack *a, t_stack *b);
