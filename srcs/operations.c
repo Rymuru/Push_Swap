@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:29:52 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/15 21:30:34 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/16 15:47:54 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ void	ra_rb(t_stack *st)
 		i++;
 	}
 	st->address[i] = temp;
-	if (st->name == 'a')
+	if (st->name == 'e')
 		write(1, "ra\n", 3);
-	else if (st->name == 'b')
+	else if (st->name == 'i')
 		write(1, "rb\n", 3);
 }
 

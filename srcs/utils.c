@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 17:04:07 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/15 22:04:03 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/16 14:19:08 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	error_manager(t_stack *st)
 int	stack_init(t_stack *st, int nb, char n)
 {
 	st->name = n;
-	st->len = nb - 1;
+	st->len = nb;
 	st->address = malloc(st->len * sizeof(long int));
 	if (!st->address)
 	{

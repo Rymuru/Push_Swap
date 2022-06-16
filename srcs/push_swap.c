@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:25:12 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/15 22:02:21 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/16 14:19:02 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int	main(int ac, char **av)
 		write(1, "Error\n", 6);
 		return (1);
 	}
-	stack_init(a, ac, 'a');
+	stack_init(a, ac - 1, 'a');
 	if (fill_tab(ac, av, a) == 1)
 		return (1);
 	solver(a);

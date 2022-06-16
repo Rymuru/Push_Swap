@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 12:22:31 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/15 22:02:50 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/16 16:46:03 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <limits.h>
 
 typedef struct s_stack
 {
@@ -33,15 +34,16 @@ int			error_manager(t_stack *st);
 int			is_solved(t_stack *st);
 int			check_arg(char *o);
 int			solver(t_stack *a);
+int			look_for_min(int at_least, t_stack *a);
 long int	ft_atoi(char *str);
 
 size_t		ft_strlen(const char *s);
 
 void		free_stack(t_stack *st);
 void		simplifier(t_stack *a, t_stack *easy);
-void		bitconvert(t_stack *st);
-void		radix(t_stack *a, t_stack *b);
-void		railway(t_stack *a, t_stack *b);
+void		edge_case(t_stack *a, t_stack *easy);
+void		radix(t_stack *easy, t_stack *bis, t_stack *a, t_stack *b);
+void		railway(t_stack *easy, t_stack *bis, t_stack *a, t_stack *b);
 void		invert(t_stack *a, t_stack *b);
 void		ft_plusun(t_stack *st);
 void		ft_moinsun(t_stack *st);
@@ -52,9 +54,5 @@ void		rr(t_stack *st, t_stack *st2);
 void		pa_pb(t_stack *st, t_stack *st2);
 void		rra_rrb(t_stack *st);
 void		rrr(t_stack *st, t_stack *st2);
-
-void put_tab(t_stack *st);
-void	ft_putnbr(int n);
-void	ft_putchar(char c);
 
 #endif
