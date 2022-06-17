@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 12:22:31 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/17 02:38:05 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/17 03:09:44 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void		railway(t_stack *easy, t_stack *bis, t_stack *a, t_stack *b);
 void		invert(t_stack *a, t_stack *b);
 void		sort_three(t_stack *a, int min, int max);
 void		dispacher(t_stack *a, t_stack *b);
-void		quicksolve(t_stack *a, t_stack *b, int i);
+void		quicksolve(t_stack *a, t_stack *b);
 void		ft_plusun(t_stack *st);
 void		ft_moinsun(t_stack *st);
 void		sa_sb(t_stack *st);

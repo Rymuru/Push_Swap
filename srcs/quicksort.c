@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 23:41:57 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/17 02:57:17 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/17 03:10:29 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,14 @@ void	dispacher(t_stack *a, t_stack *b)
 		sort_three(a, 0, 0);
 	while (b->len)
 	{
-		quicksolve(a, b, 0);
+		quicksolve(a, b);
 	}
 }
 
-void	quicksolve(t_stack *a, t_stack *b, int i)
+void	quicksolve(t_stack *a, t_stack *b)
 {
+	int	i;
+
 	pa_pb(b, a);
 	i = where_should_i_go(a);
 	if (i == 2)

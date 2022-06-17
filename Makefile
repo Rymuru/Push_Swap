@@ -6,6 +6,8 @@ SRCS	=	\
 			push_swap.c			\
 			resize.c			\
 			to_radix.c			\
+			quicksort.c			\
+			quickutils.c		\
 			utils.c
 
 
