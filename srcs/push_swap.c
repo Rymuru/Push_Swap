@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:25:12 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/17 00:51:33 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/17 18:42:35 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ int	main(int ac, char **av)
 {
 	t_stack	*a;
 
+	if (ac == 1)
+		return (0);
 	a = malloc(sizeof(t_stack));
 	if (!a)
 		error_manager(a);
