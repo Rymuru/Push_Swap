@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 17:04:07 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/17 14:51:28 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/17 18:28:48 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	error_manager(t_stack *st)
 {
 	st->len = 0;
 	free(st->address);
-	write(1, "Error", 6);
+	write(1, "Error\n", 6);
 	return (1);
 }
 
