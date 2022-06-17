@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:29:52 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/17 01:20:56 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/17 14:17:04 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	sa_sb(t_stack *st)
 {
-	long long int	temp;
+	long int	temp;
 
 	temp = st->address[0];
 	st->address[0] = st->address[1];
-	st->address[1] = st->address[temp];
+	st->address[1] = temp;
 	if (st->name == 'e')
 		write(1, "sa\n", 3);
 	else if (st->name == 'i')

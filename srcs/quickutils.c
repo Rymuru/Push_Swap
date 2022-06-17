@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 01:40:47 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/17 03:53:52 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/17 17:26:54 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,46 @@ int	find_max(int max, t_stack *a)
 	return (max);
 }
 
-int	where_should_i_go(t_stack *a)
+void	up_low(t_stack *a, t_stack *b)
 {
 	int	i;
+	int	index_min;
 
 	i = 0;
-	while (a->address[0] >= a->address[i] && i < a->len)
-		++i;
-	return (i);
+	index_min = 0;
+	while (i < a->len)
+	{
+		if (a->address[i] < a->address[index_min])
+			index_min = i;
+		i++;
+	}
+	sattelize(a, b, index_min);
+}
+
+void	sattelize(t_stack *a, t_stack *b, int index_min)
+{
+	if (index_min == 0)
+		pa_pb(a, b);
+	else if (index_min == 1)
+	{
+		sa_sb(a);
+		pa_pb(a, b);
+	}
+	else if (index_min == 2)
+	{
+		ra_rb(a);
+		ra_rb(a);
+		pa_pb(a, b);
+	}
+	else if ((index_min == 3 && a->len == 4) || index_min == 4)
+	{
+		rra_rrb(a);
+		pa_pb(a, b);
+	}
+	else if (index_min == 3 && a->len == 5)
+	{
+		rra_rrb(a);
+		rra_rrb(a);
+		pa_pb(a, b);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 12:22:31 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/17 03:53:35 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/17 17:27:03 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int			edge_case(t_stack *a, t_stack *easy);
 int			quick_init(t_stack *a);
 int			find_min(int min, t_stack *a);
 int			find_max(int max, t_stack *a);
-int			where_should_i_go(t_stack *a);
 long int	ft_atoi(char *str);
 
 size_t		ft_strlen(const char *s);
@@ -53,7 +52,8 @@ void		invert(t_stack *a, t_stack *b);
 void		sort_three(t_stack *a, int min, int max);
 void		dispacher(t_stack *a, t_stack *b);
 void		quicksolve(t_stack *a, t_stack *b);
-void		target_four(t_stack *a);
+void		up_low(t_stack *a, t_stack *b);
+void		sattelize(t_stack *a, t_stack *b, int index_min);
 void		ft_plusun(t_stack *st);
 void		ft_moinsun(t_stack *st);
 void		sa_sb(t_stack *st);
