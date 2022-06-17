@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 23:41:57 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/17 03:10:29 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/17 03:49:09 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,29 +81,36 @@ void	dispacher(t_stack *a, t_stack *b)
 
 void	quicksolve(t_stack *a, t_stack *b)
 {
-	int	i;
+	int	target;
 
 	pa_pb(b, a);
-	i = where_should_i_go(a);
-	if (i == 2)
+	target = where_should_i_go(a);
+	if (target == 2)
 		sa_sb(a);
-	else if (i == 3)
+	else if (target == 3)
 	{
 		sa_sb(a);
 		ra_rb(a);
 		sa_sb(a);
 		rra_rrb(a);
 	}
-	else if (i == 4)
+	else if (target == 4)
 	{
-		sa_sb(a);
-		ra_rb(a);
-		sa_sb(a);
-		ra_rb(a);
-		sa_sb(a);
-		rra_rrb(a);
-		rra_rrb(a);
+		target_four(a);
 	}
-	else if (i == 5)
+	else if (target == 5)
 		ra_rb(a);
+}
+
+void	target_four(t_stack *a)
+{
+	if (a->len == 4)
+		ra_rb(a);
+	else
+	{
+		rra_rrb(a);
+		sa_sb(a);
+		ra_rb(a);
+		ra_rb(a);
+	}
 }

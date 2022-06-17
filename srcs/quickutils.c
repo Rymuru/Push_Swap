@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 01:40:47 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/17 02:57:04 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/17 03:53:52 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	where_should_i_go(t_stack *a)
 	int	i;
 
 	i = 0;
-	while (a->address[0] >= a->address[i])
+	while (a->address[0] >= a->address[i] && i < a->len)
 		++i;
 	return (i);
 }
