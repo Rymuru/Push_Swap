@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:25:12 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/18 18:31:13 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/18 21:02:47 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,23 @@
 int	check_arg(char *o)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	if (o[0] == '\0' || ft_strlen(o) > 11)
+	if (o[0] == '\0')
 		return (1);
-	while (o[i] && ((o[i] >= '0' && o[i] <= '9') || o[i] == '-'))
+	if (o[i] == '+' || o[i] == '-')
+		++i;
+	while (o[i] == '0')
+		++i;
+	j = i;
+	while (o[i] && o[i] >= '0' && o[i] <= '9')
 	{
 		i++;
 		if (o[i] == '\0')
 			return (0);
+		if (i - j == 10)
+			return (1);
 	}
 	return (1);
 }
@@ -75,7 +83,7 @@ int	fill_tab(int ac, char **av, t_stack *a)
 	while (i < ac && twin == 0)
 	{
 		temp = ft_atoi(av[i]);
-		if (temp > 2147483647 || temp < -2147483648)
+		if (temp > 2147483647L || temp < -2147483648L)
 			return (error_manager(a));
 		twin = dejavu(a->address, i - 1, temp);
 		a->address[i - 1] = temp;

@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 23:41:57 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/17 16:59:28 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/18 20:13:35 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	quick_init(t_stack *a)
 
 	if (is_solved(a) == 0)
 		return (0);
+	a->name = 'e';
 	if (a->len == 2)
 	{
 		sa_sb(a);
@@ -26,7 +27,6 @@ int	quick_init(t_stack *a)
 	b = malloc(sizeof(t_stack));
 	if (!b)
 		error_manager(a);
-	a->name = 'e';
 	stack_init(b, a->len, 'i');
 	b->len = 0;
 	dispacher(a, b);
