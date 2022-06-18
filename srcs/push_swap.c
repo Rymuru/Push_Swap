@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:25:12 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/17 18:42:35 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/18 18:31:13 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,8 @@ int	main(int ac, char **av)
 		error_manager(a);
 	if (safe(ac, av) == 1)
 	{
-		write(1, "Error\n", 6);
+		free(a);
+		write(2, "Error\n", 6);
 		return (1);
 	}
 	stack_init(a, ac - 1, 'a');
