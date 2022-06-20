@@ -17,19 +17,19 @@ OBJS	= ${SRCS:.c=.o}
 
 NAME	= push_swap
 
-CC		= gcc -c -o
-LINKER	= gcc -o
+CC		= cc
+LINKER	= cc
 RM		= rm -rf
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -c -Wall -Wextra -Werror
 
 ${NAME}:	${OBJS}
-			${LINKER} ${NAME} ${OBJS}
+			${LINKER} -o ${NAME} ${OBJS}
 
 all:		${NAME}
 
 ${OBJSD}%.o:    ${SRCSD}%.c
-	${CC} $@ $^ ${CFLAGS}
+	${CC} -o $@ $^ ${CFLAGS}
 
 clean:
 			${RM} ${OBJS}

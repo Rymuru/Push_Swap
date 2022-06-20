@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 23:41:57 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/18 20:13:35 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/20 18:50:06 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	quick_init(t_stack *a)
 	}
 	b = malloc(sizeof(t_stack));
 	if (!b)
-		error_manager(a);
+		return (error_manager(a));
 	stack_init(b, a->len, 'i');
 	b->len = 0;
 	dispacher(a, b);

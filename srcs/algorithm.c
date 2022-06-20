@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:02:30 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/16 22:55:00 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/20 17:54:12 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@ int	solver(t_stack *a)
 
 	b = malloc(sizeof(t_stack));
 	if (!b)
-		error_manager(a);
+		return (error_manager(a));
 	bis = malloc(sizeof(t_stack));
 	if (!bis)
 	{
 		free(b);
-		error_manager(a);
+		return (error_manager(a));
 	}
 	easy = malloc(sizeof(t_stack));
 	if (!easy)
 	{
 		free(b);
 		free(bis);
-		error_manager(a);
+		return (error_manager(a));
 	}
 	stack_maker(a, b, easy, bis);
 	free_stack(b);

@@ -6,7 +6,7 @@
 /*   By: bcoenon <bcoenon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 14:25:12 by bcoenon           #+#    #+#             */
-/*   Updated: 2022/06/18 21:02:47 by bcoenon          ###   ########.fr       */
+/*   Updated: 2022/06/20 18:52:06 by bcoenon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	check_arg(char *o)
 		return (1);
 	if (o[i] == '+' || o[i] == '-')
 		++i;
-	while (o[i] == '0')
+	while (o[i] == '0' && o[i + 1] != '\0')
 		++i;
 	j = i;
 	while (o[i] && o[i] >= '0' && o[i] <= '9')
@@ -102,7 +102,7 @@ int	main(int ac, char **av)
 		return (0);
 	a = malloc(sizeof(t_stack));
 	if (!a)
-		error_manager(a);
+		return (error_manager(a));
 	if (safe(ac, av) == 1)
 	{
 		free(a);
